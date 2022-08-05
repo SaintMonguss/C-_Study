@@ -8,24 +8,24 @@ public:
 class Chulsoo
 {
 public :
-	int Eat(int);
+	void Eat(int);
+	inline void EatInline(int SteakWeight);
 };
 
-int Chulsoo::Eat(int steakNum)
+void Chulsoo::Eat(int SteakWdight)
 {
-	steakNum = 70000;
-	std::cout << "철수는 먹는다" << std::endl;
-	return steakNum;
+	std::cout << "Eat() :: 철수는 " << SteakWdight << "g 짜리 스테이크를 먹는다" << std::endl;
+}
+
+void Chulsoo::EatInline(int SteakWdight)
+{
+	std::cout << "EatInline() :: 철수는 " << SteakWdight << "g 짜리 스테이크를 먹는다" << std::endl;
 }
 
 int main()
 {
 	Chulsoo chulsoo;
-	Restaurant vips;
-
-	vips.Steak = 30000;
-	std::cout << "철수는" << chulsoo.Eat(vips.Steak) << "원 짜리 스테이크를 먹었다고 거짓말을 했다" << std::endl;
-	std::cout << "레스토랑은 철수가" << vips.Steak << "원 짜리 스테이크를 먹은것을 알고 있다" << std::endl;
-
+	chulsoo.Eat(500);
+	chulsoo.EatInline(500);
 	return 0;
 }

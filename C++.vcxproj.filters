@@ -63,12 +63,21 @@
     <ClCompile Include="depoltePar.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="compare.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="lamda.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="header1.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
     <ClInclude Include="header2.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="compare.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>
