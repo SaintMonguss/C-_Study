@@ -4,8 +4,8 @@
 class Calculater
 {
 private : 
-	float num1=0;
-	float num2=0;
+	float num1 = 0;
+	float num2 = 0;
 	char action = NULL;
 public: 
 	void Input()
