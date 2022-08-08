@@ -4,10 +4,16 @@
 class Calculater
 {
 private : 
-	float num1 = 0;
-	float num2 = 0;
-	char action = NULL;
+	float num1;
+	float num2;
+	char action ;
 public: 
+	Calculater()
+	{
+		num1 = 0;
+		num2 = 0;
+		action = NULL;
+	};
 	void Input()
 	{
 		std::cout << "==================================" << std::endl;
@@ -18,9 +24,28 @@ public:
 			std::cout << "0으로 나눌 순 없습니다. 잘못된 입력입니다" << std::endl;
 			action = NULL;
 			num1, num2 = 0;
-			this->Input();
+			Input();
 		}
 	};
+
+	void showResult()
+	{
+		switch (this->action)
+		{
+		case '+':
+			printf("%.2f %c %.2f = %.2f\n", GetNum1(), GetAction(), GetNum2(), Add());
+			break;
+		case '-':
+			printf("%.2f %c %.2f = %.2f\n", GetNum1(), GetAction(), GetNum2(), Sub());
+			break;
+		case '*':
+			printf("%.2f %c %.2f = %.2f\n", GetNum1(), GetAction(), GetNum2(), Multiple());
+			break;
+		case '/':
+			printf("%.2f %c %.2f = %.2f\n", GetNum1(), GetAction(), GetNum2(), Divide());
+			break;
+		}
+	}
 
 	float Add() const
 	{
@@ -42,42 +67,44 @@ public:
 		return (this->num1) / (this->num2);
 	};
 
-	float Getnum1() const
+	float GetNum1() const
 	{
 		return this->num1;
 	};
+
+	void SetNum1(float num1)
+	{
+		this->num1 = num1;
+	};
 	
-	float Getnum2() const
+	float GetNum2() const
 	{
 		return this->num2;
+	};
+
+	void SetNum2(float num2)
+	{
+		this->num2 = num2;
 	};
 	
 	char GetAction() const
 	{
 		return this->action;
 	};
+
+	void SetAction(char action)
+	{
+		this->action = action;
+	};
 };
 
 
 int main()
 { 
-	Calculater casio = Calculater();
+	Calculater casio;
 	casio.Input();
-	switch (casio.GetAction())
-	{
-	case '+':
-		printf("%.2f %c %.2f = %.2f\n", casio.Getnum1(), casio.GetAction(), casio.Getnum2(), casio.Add());
-		break;
-	case '-':
-		printf("%.2f %c %.2f = %.2f\n", casio.Getnum1(), casio.GetAction(), casio.Getnum2(), casio.Sub());
-		break;
-	case '*':
-		printf("%.2f %c %.2f = %.2f\n", casio.Getnum1(), casio.GetAction(), casio.Getnum2(), casio.Multiple());
-		break;
-	case '/':
-		printf("%.2f %c %.2f = %.2f\n", casio.Getnum1(), casio.GetAction(), casio.Getnum2(), casio.Divide());
-		break;
-	}
+	casio.showResult();
 
 	return 0;
 }
+
