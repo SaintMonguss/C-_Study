@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 
-class Person
+class 
+
 {
 private : 
 	char* name;
